@@ -103,9 +103,9 @@ for i in range(0,20):
 
                                     
         try:
-            title = job.find_element_by_xpath('.//h1[contains(@class, "icl-u-xs-mb--xs icl-u-xs-mt--none jobsearch-JobInfoHeader-title is-embedded")]').text
+            title = job.find_element_by_xpath('.//h2[contains(@class, "jobTitle")]').text
         except:
-            title = job.find_element_by_xpath('.//h1[contains(@class, "icl-u-xs-mb--xs icl-u-xs-mt--none jobsearch-JobInfoHeader-title is-embedded")]').get_attribute(name="title")
+            title = job.find_element_by_xpath('.//h2[contains(@class, "jobTitle")]').get_attribute(name="title")
         titles.append(title)
         print(title)
         
@@ -128,4 +128,17 @@ for i in range(0,20):
     
 
     print("Page: {}".format(str(i+2)))           
+
+df_da=pd.DataFrame()
+df_da['Title']=titles
+df_da['Company']=companies
+df_da['Location']=locations
+df_da['Link']=links
+df_da['Review']=reviews
+ 
+    
+        
+
+df_da.to_csv('.\outputs\testgis10312021.csv',encoding='utf-8-sig') 
+
 print("ayob")
