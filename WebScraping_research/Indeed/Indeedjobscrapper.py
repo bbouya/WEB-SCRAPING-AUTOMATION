@@ -139,6 +139,6 @@ df_da['Review']=reviews
    
 pd.options.display.max_columns= None      
 print(df_da.head(2))
-df_da.to_csv('.\outputs\testgis10312021.csv',encoding='utf-8-sig') 
+df_da.to_csv('testgis10312021.csv') 
 
 print("ayob")
